@@ -15,10 +15,20 @@ BuildRequires:	libtool >= 2:1.4d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
- The GP kernel is a C++ class library that can be used to apply genetic programming techniques to all kinds of problems. An integral    component is the ability to produce automatically defined functions as found in Koza's "Genetic Programming II". Technical documentation (postscript format) is included. There is also a short introduction into genetic programming.
+The GP kernel is a C++ class library that can be used to apply genetic
+programming techniques to all kinds of problems. An integral component
+is the ability to produce automatically defined functions as found in
+Koza's "Genetic Programming II". Technical documentation (postscript
+format) is included. There is also a short introduction into genetic
+programming.
 
 %description -l pl
-J±dro klasy biblioteki programowania genetycznego. Mo¿e byæ u¿ywane do stosowania przy ró¿nych technikach programowania genetycznego w zastosowaniu do ró¿nych problemów. Posiada wbudowan± mo¿liwo¶æ automatycznego tworzenia zdefiniowanych funkcji opisanych w ksi±¿ce Kozy "Genetic Programming II". Pakiet zawiera dokumentacjê w formacie postscript oraz krótkie wprowadzenie do programowania genetycznego
+J±dro klasy biblioteki programowania genetycznego. Mo¿e byæ u¿ywane do
+stosowania przy ró¿nych technikach programowania genetycznego w
+zastosowaniu do ró¿nych problemów. Posiada wbudowan± mo¿liwo¶æ
+automatycznego tworzenia zdefiniowanych funkcji opisanych w ksi±¿ce
+Kozy "Genetic Programming II". Pakiet zawiera dokumentacjê w formacie
+postscript oraz krótkie wprowadzenie do programowania genetycznego
 
 %prep
 %setup -q -n %{name}%{version}
