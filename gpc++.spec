@@ -28,24 +28,26 @@ stosowania przy ró¿nych technikach programowania genetycznego w
 zastosowaniu do ró¿nych problemów. Posiada wbudowan± mo¿liwo¶æ
 automatycznego tworzenia zdefiniowanych funkcji opisanych w ksi±¿ce
 Kozy "Genetic Programming II". Pakiet zawiera dokumentacjê w formacie
-postscript oraz krótkie wprowadzenie do programowania genetycznego
+postscript oraz krótkie wprowadzenie do programowania genetycznego.
 
 %prep
 %setup -q -n %{name}%{version}
 %patch0 -p1
 
 %build
-make
+%{__make}
 
-make install
+%install
+rm -rf $RPM_BUILD_ROOT
+
+# XXX: buildroot!
+%{__make} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
 %doc README History FILES
-%attr(755,root,root) %{_libdir}/gpc++/libgpc++.a
+%dir %{_libdir}/gpc++
+%{_libdir}/gpc++/libgpc++.a
