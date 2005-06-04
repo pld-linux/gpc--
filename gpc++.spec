@@ -64,12 +64,13 @@ Statyczna wersja biblioteki GPC++.
 	CXX="libtool --mode=compile --tag CXX %{__cxx}" \
 	CXXFLAGS="%{rpmcflags}" \
 	LIB="libgpc++.la" \
-	AR="libtool --mode=link %{__cxx} %{rpmldflags} -rpath %{_libdir} -o libgpc++.la #\$(OBJS:.o=.lo) #"
+	AR="libtool --mode=link %{__cxx} %{rpmldflags} -rpath %{_libdir} -o libgpc++.la \$(OBJS:.o) #"
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}
+install	-d $RPM_BUILD_ROOT%{_includedir}/gpc++
 
 %{__make} install -C src \
 	LIB="libgpc++.la" \
@@ -82,8 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README History FILES
-%dir %{_libdir}/gpc++
-%{_libdir}/gpc++/libgpc++.a
+%attr(755,root,root) %{_libdir}/libgpc++.so.*.*.*
 
 
 %files devel
