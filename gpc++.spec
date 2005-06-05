@@ -30,7 +30,6 @@ automatycznego tworzenia zdefiniowanych funkcji opisanych w ksi±¿ce
 Kozy "Genetic Programming II". Pakiet zawiera dokumentacjê w formacie
 postscript oraz krótkie wprowadzenie do programowania genetycznego.
 
-
 %package devel
 Summary:	Header files for GPC++
 Summary(pl):	Pliki nag³ówkowe biblioteki GPC++
@@ -60,7 +59,8 @@ Statyczna wersja biblioteki GPC++.
 %setup -q -n %{name}%{version}
 %patch0 -p1
 
-%build%{__make} -C src \
+%build
+%{__make} -C src \
 	CXX="libtool --mode=compile --tag CXX %{__cxx}" \
 	CXXFLAGS="%{rpmcflags}" \
 	LIB="libgpc++.la" \
@@ -84,7 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README History FILES
 %attr(755,root,root) %{_libdir}/libgpc++.so.*.*.*
-
 
 %files devel
 %defattr(644,root,root,755)
