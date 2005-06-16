@@ -61,25 +61,23 @@ Statyczna wersja biblioteki GPC++.
 
 %build
 %{__make} -C src \
-	CXX="libtool --mode=compile --tag CXX %{__cxx}" \
-	CXXFLAGS="%{rpmcflags}" \
-	LIB="libgpc++.la" \
-	AR="libtool --mode=link %{__cxx} %{rpmldflags} -rpath %{_libdir} -o libgpc++.la \$(OBJS:.o) #" \
-
+	CCC="libtool --mode=compile --tag CXX %{__cxx}" \
+	OVERALLCPPFLAGS="%{rpmcflags}" \
+	GPLIBFILE="libgpc++.la" \
+	AR="libtool --mode=link %{__cxx} %{rpmldflags} -rpath %{_libdir} -o libgpc++.la \$(OBJS:%.o=%.lo) #" \
+	LD=true
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}
 install	-d $RPM_BUILD_ROOT%{_includedir}/gpc++
 
-install src/.libs/* $RPM_BUILD_ROOT%{_libdir}/
-install include/*   $RPM_BUILD_ROOT%{_includedir}/gpc++/
-install src/*.cc    $RPM_BUILD_ROOT%{_includedir}/gpc++/
+install include/*   $RPM_BUILD_ROOT%{_includedir}/gpc++
 
 %{__make} install -C src \
-	LIB="libgpc++.la" \
+	GPLIBFILE="libgpc++.la" \
 	INSTALL="libtool --mode=install install" \
-	DESTDIR=$RPM_BUILD_ROOT%{_prefix}
+	INSTALLDIR=$RPM_BUILD_ROOT%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
