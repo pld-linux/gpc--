@@ -1,5 +1,5 @@
 Summary:	GPC++ - Genetic Programming C++ Class Library
-Summary(pl):	Biblioteka C++ obiektów do programowania genetycznego
+Summary(pl.UTF-8):   Biblioteka C++ obiektÃ³w do programowania genetycznego
 Name:		gpc++
 Version:	0.5.2
 #%define	bver	pre2
@@ -22,17 +22,17 @@ Koza's "Genetic Programming II". Technical documentation (postscript
 format) is included. There is also a short introduction into genetic
 programming.
 
-%description -l pl
-J±dro klasy biblioteki programowania genetycznego. Mo¿e byæ u¿ywane do
-stosowania przy ró¿nych technikach programowania genetycznego w
-zastosowaniu do ró¿nych problemów. Posiada wbudowan± mo¿liwo¶æ
-automatycznego tworzenia zdefiniowanych funkcji opisanych w ksi±¿ce
-Kozy "Genetic Programming II". Pakiet zawiera dokumentacjê w formacie
-postscript oraz krótkie wprowadzenie do programowania genetycznego.
+%description -l pl.UTF-8
+JÄ…dro klasy biblioteki programowania genetycznego. MoÅ¼e byÄ‡ uÅ¼ywane do
+stosowania przy rÃ³Å¼nych technikach programowania genetycznego w
+zastosowaniu do rÃ³Å¼nych problemÃ³w. Posiada wbudowanÄ… moÅ¼liwoÅ›Ä‡
+automatycznego tworzenia zdefiniowanych funkcji opisanych w ksiÄ…Å¼ce
+Kozy "Genetic Programming II". Pakiet zawiera dokumentacjÄ™ w formacie
+postscript oraz krÃ³tkie wprowadzenie do programowania genetycznego.
 
 %package devel
 Summary:	Header files for GPC++
-Summary(pl):	Pliki nag³ówkowe biblioteki GPC++
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki GPC++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -40,19 +40,19 @@ Requires:	libstdc++-devel
 %description devel
 This package contains header files for GPC++.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe biblioteki GPC++.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe biblioteki GPC++.
 
 %package static
 Summary:	Static version of GPC++
-Summary(pl):	Statyczna wersja biblioteki GPC++
+Summary(pl.UTF-8):   Statyczna wersja biblioteki GPC++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of GPC++.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki GPC++.
 
 %prep
