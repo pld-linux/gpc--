@@ -1,5 +1,5 @@
 Summary:	GPC++ - Genetic Programming C++ Class Library
-Summary(pl.UTF-8):   Biblioteka C++ obiektów do programowania genetycznego
+Summary(pl.UTF-8):	Biblioteka C++ obiektów do programowania genetycznego
 Name:		gpc++
 Version:	0.5.2
 #%define	bver	pre2
@@ -32,7 +32,7 @@ postscript oraz krótkie wprowadzenie do programowania genetycznego.
 
 %package devel
 Summary:	Header files for GPC++
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki GPC++
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GPC++
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -45,7 +45,7 @@ Ten pakiet zawiera pliki nagłówkowe biblioteki GPC++.
 
 %package static
 Summary:	Static version of GPC++
-Summary(pl.UTF-8):   Statyczna wersja biblioteki GPC++
+Summary(pl.UTF-8):	Statyczna wersja biblioteki GPC++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
